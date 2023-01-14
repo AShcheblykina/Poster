@@ -30,7 +30,7 @@ public class ProductManagerTest {
 
         Ribbonposter[] expected = {AllMovies1, AllMovies2, AllMovies3, AllMovies4, AllMovies5, AllMovies6, AllMovies7,
                 AllMovies8, AllMovies9, AllMovies10};
-        Ribbonposter[] actual = repo.getAllMovieTitle();
+        Ribbonposter[] actual = repo.AllMovies;
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -46,7 +46,7 @@ public class ProductManagerTest {
         repo.added(AllMovies5);
 
         Ribbonposter[] expected = {AllMovies1, AllMovies2, AllMovies3, AllMovies4, AllMovies5};
-        Ribbonposter[] actual = repo.getAllMovieTitle();
+        Ribbonposter[] actual = repo.AllMovies;
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -58,7 +58,7 @@ public class ProductManagerTest {
         repo.added(AllMovies1);
 
         Ribbonposter[] expected = {AllMovies1};
-        Ribbonposter[] actual = repo.getAllMovieTitle();
+        Ribbonposter[] actual = repo.AllMovies;
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -75,10 +75,10 @@ public class ProductManagerTest {
         repo.added(AllMovies7);
         repo.added(AllMovies8);
         repo.added(AllMovies9);
-        
+
         Ribbonposter[] expected = {AllMovies1, AllMovies2, AllMovies3, AllMovies4, AllMovies5, AllMovies6, AllMovies7,
                 AllMovies8, AllMovies9};
-        Ribbonposter[] actual = repo.getAllMovieTitle();
+        Ribbonposter[] actual = repo.AllMovies;
 
         Assertions.assertArrayEquals(expected, actual);
     }

@@ -1,6 +1,7 @@
 public class Ribbonposter {
     private String movieTitle;
     private int limitMovieTitle;
+    //private int AllMovies;
 
     public Ribbonposter (String movieTitle) {
         this.movieTitle = movieTitle;
@@ -9,5 +10,7 @@ public class Ribbonposter {
     public String getMovieTitle() {
         return movieTitle;
     }
+
+
 }
 

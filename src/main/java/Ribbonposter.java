@@ -7,10 +7,8 @@ public class Ribbonposter {
         this.movieTitle = movieTitle;
         this.limitMovieTitle = limitMovieTitle;
     }
-    public String getMovieTitle() {
-        return movieTitle;
+
     }
 
 
-}
 

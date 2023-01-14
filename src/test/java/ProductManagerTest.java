@@ -1,5 +1,6 @@
-import org.junit.Test;
+
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class ProductManagerTest {
     Ribbonposter AllMovies1 = new Ribbonposter("bloodshot");
@@ -36,7 +37,23 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void addedOneMovies() {
+    public void addedFiveMovies() {
+        ProductManager repo = new ProductManager();
+        repo.added(AllMovies1);
+        repo.added(AllMovies2);
+        repo.added(AllMovies3);
+        repo.added(AllMovies4);
+        repo.added(AllMovies5);
+
+        Ribbonposter[] expected = {AllMovies1, AllMovies2, AllMovies3, AllMovies4, AllMovies5};
+        Ribbonposter[] actual = repo.getAllMovieTitle();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void changedOneMovies() {
         ProductManager repo = new ProductManager();
         repo.added(AllMovies1);
 
@@ -44,27 +61,27 @@ public class ProductManagerTest {
         Ribbonposter[] actual = repo.getAllMovieTitle();
 
         Assertions.assertArrayEquals(expected, actual);
-
     }
+
     @Test
-    public void changedFiveMovies() {
+    public void changedNineMovies() {
         ProductManager repo = new ProductManager();
+        repo.added(AllMovies1);
+        repo.added(AllMovies2);
+        repo.added(AllMovies3);
+        repo.added(AllMovies4);
         repo.added(AllMovies5);
-
-        Ribbonposter[] expected = {AllMovies5};
+        repo.added(AllMovies6);
+        repo.added(AllMovies7);
+        repo.added(AllMovies8);
+        repo.added(AllMovies9);
+        
+        Ribbonposter[] expected = {AllMovies1, AllMovies2, AllMovies3, AllMovies4, AllMovies5, AllMovies6, AllMovies7,
+                AllMovies8, AllMovies9};
         Ribbonposter[] actual = repo.getAllMovieTitle();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
-    @Test
-    public void chagedTenMovies() {
-        ProductManager repo = new ProductManager();
-        repo.added(AllMovies10);
 
-        Ribbonposter[] expected = {AllMovies10};
-        Ribbonposter[] actual = repo.getAllMovieTitle();
-
-        Assertions.assertArrayEquals(expected,actual);
-    }
 }
 

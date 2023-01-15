@@ -3,13 +3,13 @@ public class Ribbonposter {
     private int limitMovieTitle;
 
 
-    public Ribbonposter (String movieTitle) {
+    public Ribbonposter(String movieTitle) {
         this.movieTitle = movieTitle;
         this.limitMovieTitle = limitMovieTitle;
         int limitMovieTitle = 10;
     }
 
-    }
+}
 
 
 

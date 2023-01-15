@@ -130,6 +130,7 @@ public class ProductManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void addedThreeMovies() {
         ProductManager repo = new ProductManager();
@@ -140,7 +141,7 @@ public class ProductManagerTest {
         Ribbonposter[] expected = {AllMovies6, AllMovies5, AllMovies4};
         Ribbonposter[] actual = repo.LastMovies();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
 

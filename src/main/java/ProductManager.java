@@ -13,7 +13,19 @@ public class ProductManager {
         return AllMovies;
 
     }
-
+    public Ribbonposter[] LastMovies() {
+        int resultLength;
+        if (AllMovies.length < 10) {
+            resultLength = AllMovies.length;
+        } else {
+            resultLength = 10;
+    }
+        Ribbonposter[] tmp = new Ribbonposter[resultLength];
+        for (int i = 0; i < tmp.length; i ++) {
+            tmp[i] = AllMovies[AllMovies.length -1 - i];
+        }
+        return tmp;
+    }
 
 
 

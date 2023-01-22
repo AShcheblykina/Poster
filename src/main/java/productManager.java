@@ -8,7 +8,8 @@ public class productManager {
         this.limitMovieTitle = limitMovieTitle;
         int limitMovieTitle = 10;
     }
-    public productManager( int limitMovieTitle) {
+
+    public productManager(int limitMovieTitle) {
         this.limitMovieTitle = limitMovieTitle;
     }
 

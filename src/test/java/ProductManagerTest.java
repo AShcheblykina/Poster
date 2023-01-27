@@ -13,6 +13,7 @@ public class ProductManagerTest {
     String allMovies8 = new String();
     String allMovies9 = new String();
     String allMovies10 = new String();
+    String allMovies11 = new String();
 
 
     @Test
@@ -92,7 +93,7 @@ public class ProductManagerTest {
 
 
         String[] expected = {allMovies1, allMovies2,};
-        String[] actual = repo.LastMovies();
+        String[] actual = repo.lastMovies();
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -114,7 +115,7 @@ public class ProductManagerTest {
 
         String[] expected = {allMovies10, allMovies9, allMovies8, allMovies7, allMovies6, allMovies5, allMovies4,
                 allMovies3, allMovies2, allMovies1};
-        String[] actual = repo.LastMovies();
+        String[] actual = repo.lastMovies();
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -126,7 +127,7 @@ public class ProductManagerTest {
         repo.added(allMovies10);
 
         String[] expected = {allMovies10, allMovies9};
-        String[] actual = repo.LastMovies();
+        String[] actual = repo.lastMovies();
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -139,11 +140,44 @@ public class ProductManagerTest {
         repo.added(allMovies6);
 
         String[] expected = {allMovies6, allMovies5, allMovies4};
-        String[] actual = repo.LastMovies();
+        String[] actual = repo.lastMovies();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void AboveMinMovies() {
+        ProductManager repo = new ProductManager();
+        repo.lastMovies();
+
+        String[] expected = {};
+        String[] actual = repo.lastMovies();
+
+        Assertions.assertArrayEquals(expected,actual);
+    }
+
+    @Test
+    public void AboveMaxMovies() {
+        ProductManager repo = new ProductManager();
+        repo.added(allMovies1);
+        repo.added(allMovies2);
+        repo.added(allMovies3);
+        repo.added(allMovies4);
+        repo.added(allMovies5);
+        repo.added(allMovies6);
+        repo.added(allMovies7);
+        repo.added(allMovies8);
+        repo.added(allMovies9);
+        repo.added(allMovies10);
+        repo.added(allMovies11);
+
+        String[] expected = {allMovies10, allMovies9, allMovies8, allMovies7, allMovies6, allMovies5, allMovies4,
+                allMovies3, allMovies2, allMovies1};
+        String[] actual = repo.lastMovies();
+
+        Assertions.assertArrayEquals(expected,actual);
+
+    }
 
 }
 

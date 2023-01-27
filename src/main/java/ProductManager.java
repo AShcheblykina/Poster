@@ -1,20 +1,14 @@
 public class ProductManager {
-    String[] allMovies = new String[0];
+    public String[] allMovies = new String[0];
     private int limitMovieTitle;
-    private String movieTitle;
 
-    public ProductManager(String movieTitle) {
-        this.movieTitle = movieTitle;
-        this.limitMovieTitle = limitMovieTitle;
-        int limitMovieTitle = 10;
+
+    public ProductManager() {
+        this.limitMovieTitle = 10;
     }
 
     public ProductManager(int limitMovieTitle) {
         this.limitMovieTitle = limitMovieTitle;
-    }
-
-    public ProductManager() {
-
     }
 
     public void added(String movieTitle) {
@@ -31,12 +25,12 @@ public class ProductManager {
 
     }
 
-    public String[] LastMovies() {
+    public String[] lastMovies() {
         int resultLength;
-        if (allMovies.length < 10) {
+        if (allMovies.length < limitMovieTitle) {
             resultLength = allMovies.length;
         } else {
-            resultLength = 10;
+            resultLength = limitMovieTitle;
         }
         String[] tmp = new String[resultLength];
         for (int i = 0; i < tmp.length; i++) {

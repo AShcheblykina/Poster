@@ -153,7 +153,7 @@ public class ProductManagerTest {
         String[] expected = {};
         String[] actual = repo.lastMovies();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -175,7 +175,7 @@ public class ProductManagerTest {
                 allMovies3, allMovies2, allMovies1};
         String[] actual = repo.lastMovies();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
 
     }
 

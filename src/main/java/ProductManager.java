@@ -1,5 +1,5 @@
 public class ProductManager {
-    public String[] allMovies = new String[0];
+    private String[] allMovies = new String[0];
     private int limitMovieTitle;
 
 

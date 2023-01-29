@@ -14,6 +14,10 @@ public class ProductManagerTest {
     String allMovies9 = new String();
     String allMovies10 = new String();
     String allMovies11 = new String();
+    String allMovies12 = new String();
+    String allMovies13 = new String();
+    String allMovies14 = new String();
+    String allMovies15 = new String();
 
 
     @Test
@@ -40,15 +44,15 @@ public class ProductManagerTest {
 
     @Test
     public void addedFiveMovies() {
-        ProductManager repo = new ProductManager();
-        repo.added(allMovies1);
-        repo.added(allMovies2);
-        repo.added(allMovies3);
-        repo.added(allMovies4);
-        repo.added(allMovies5);
+        ProductManager manager = new ProductManager();
+        manager.added(allMovies1);
+        manager.added(allMovies2);
+        manager.added(allMovies3);
+        manager.added(allMovies4);
+        manager.added(allMovies5);
 
         String[] expected = {allMovies1, allMovies2, allMovies3, allMovies4, allMovies5};
-        String[] actual = repo.allMovies;
+        String[] actual = manager.allMovies;
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -158,25 +162,65 @@ public class ProductManagerTest {
 
     @Test
     public void AboveMaxMovies() {
-        ProductManager repo = new ProductManager();
-        repo.added(allMovies1);
-        repo.added(allMovies2);
-        repo.added(allMovies3);
-        repo.added(allMovies4);
-        repo.added(allMovies5);
-        repo.added(allMovies6);
-        repo.added(allMovies7);
-        repo.added(allMovies8);
-        repo.added(allMovies9);
-        repo.added(allMovies10);
-        repo.added(allMovies11);
+        ProductManager manager = new ProductManager(15);
+        manager.added(allMovies1);
+        manager.added(allMovies2);
+        manager.added(allMovies3);
+        manager.added(allMovies4);
+        manager.added(allMovies5);
+        manager.added(allMovies6);
+        manager.added(allMovies7);
+        manager.added(allMovies8);
+        manager.added(allMovies9);
+        manager.added(allMovies10);
+        manager.added(allMovies11);
+        manager.added(allMovies12);
+        manager.added(allMovies13);
+        manager.added(allMovies14);
+        manager.added(allMovies15);
 
-        String[] expected = {allMovies10, allMovies9, allMovies8, allMovies7, allMovies6, allMovies5, allMovies4,
+
+        String[] expected = {allMovies15, allMovies14, allMovies13, allMovies12, allMovies11, allMovies10, allMovies9, allMovies8, allMovies7, allMovies6, allMovies5, allMovies4,
                 allMovies3, allMovies2, allMovies1};
-        String[] actual = repo.lastMovies();
+        String[] actual = manager.lastMovies();
 
         Assertions.assertArrayEquals(expected, actual);
 
+    }
+
+    @Test
+    public void LimitProduct() {
+        ProductManager manager = new ProductManager(5);
+
+        manager.added(allMovies1);
+        manager.added(allMovies2);
+        manager.added(allMovies3);
+        manager.added(allMovies4);
+        manager.added(allMovies5);
+        manager.added(allMovies6);
+        manager.added(allMovies7);
+        manager.added(allMovies8);
+
+        String[] expected = {allMovies5, allMovies4, allMovies3, allMovies2, allMovies1};
+        String[] actual = manager.lastMovies();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void LimitFiveProduct() {
+        ProductManager manager = new ProductManager(5);
+
+        manager.added(allMovies1);
+        manager.added(allMovies2);
+        manager.added(allMovies3);
+        manager.added(allMovies4);
+        manager.added(allMovies5);
+
+        String[] expected = {allMovies5, allMovies4, allMovies3, allMovies2, allMovies1};
+        String[] actual = manager.lastMovies();
+
+        Assertions.assertArrayEquals(expected, actual);
     }
 
 }

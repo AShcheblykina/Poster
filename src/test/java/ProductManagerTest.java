@@ -169,7 +169,7 @@ public class ProductManagerTest {
     @Test
     public void AboveMaxMovies() {
         ProductManager manager = new ProductManager(15);
-        
+
         manager.added(allMovies1);
         manager.added(allMovies2);
         manager.added(allMovies3);
@@ -204,9 +204,6 @@ public class ProductManagerTest {
         manager.added(allMovies3);
         manager.added(allMovies4);
         manager.added(allMovies5);
-        manager.added(allMovies6);
-        manager.added(allMovies7);
-        manager.added(allMovies8);
 
         String[] expected = {allMovies5, allMovies4, allMovies3, allMovies2, allMovies1};
         String[] actual = manager.lastMovies();

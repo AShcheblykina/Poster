@@ -210,7 +210,7 @@ public class ProductManagerTest {
         manager.added(allMovies9);
         manager.added(allMovies10);
 
-        String[] expected = {allMovies10, allMovies9, allMovies8, allMovies7, allMovies6,allMovies5, allMovies4, allMovies3, allMovies2, allMovies1};
+        String[] expected = {allMovies10, allMovies9, allMovies8, allMovies7, allMovies6, allMovies5, allMovies4, allMovies3, allMovies2, allMovies1};
         String[] actual = manager.lastMovies();
 
         Assertions.assertArrayEquals(expected, actual);

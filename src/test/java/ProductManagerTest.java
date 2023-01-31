@@ -197,15 +197,20 @@ public class ProductManagerTest {
 
     @Test
     public void LimitProduct() {
-        ProductManager manager = new ProductManager(5);
+        ProductManager manager = new ProductManager(10);
 
         manager.added(allMovies1);
         manager.added(allMovies2);
         manager.added(allMovies3);
         manager.added(allMovies4);
         manager.added(allMovies5);
+        manager.added(allMovies6);
+        manager.added(allMovies7);
+        manager.added(allMovies8);
+        manager.added(allMovies9);
+        manager.added(allMovies10);
 
-        String[] expected = {allMovies5, allMovies4, allMovies3, allMovies2, allMovies1};
+        String[] expected = {allMovies10, allMovies9, allMovies8, allMovies7, allMovies6,allMovies5, allMovies4, allMovies3, allMovies2, allMovies1};
         String[] actual = manager.lastMovies();
 
         Assertions.assertArrayEquals(expected, actual);

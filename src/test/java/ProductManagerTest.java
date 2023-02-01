@@ -44,14 +44,14 @@ public class ProductManagerTest {
 
     @Test
     public void addedFiveMovies() {
-        ProductManager manager = new ProductManager();
+        ProductManager manager = new ProductManager(5);
         manager.added(allMovies1);
         manager.added(allMovies2);
         manager.added(allMovies3);
         manager.added(allMovies4);
         manager.added(allMovies5);
 
-        String[] expected = {allMovies1, allMovies2, allMovies3, allMovies4, allMovies5};
+        String[] expected = {allMovies5, allMovies4, allMovies3, allMovies2, allMovies1};
         String[] actual = manager.lastMovies();
 
         Assertions.assertArrayEquals(expected, actual);
@@ -142,13 +142,13 @@ public class ProductManagerTest {
 
     @Test
     public void addedThreeMovies() {
-        ProductManager manager = new ProductManager();
+        ProductManager manager = new ProductManager(5);
 
-        manager.added(allMovies4);
-        manager.added(allMovies5);
-        manager.added(allMovies6);
+        manager.added(allMovies1);
+        manager.added(allMovies2);
+        manager.added(allMovies3);
 
-        String[] expected = {allMovies6, allMovies5, allMovies4};
+        String[] expected = {allMovies3, allMovies2, allMovies1};
         String[] actual = manager.lastMovies();
 
         Assertions.assertArrayEquals(expected, actual);
@@ -225,8 +225,11 @@ public class ProductManagerTest {
         manager.added(allMovies3);
         manager.added(allMovies4);
         manager.added(allMovies5);
+        manager.added(allMovies6);
+        manager.added(allMovies7);
+        manager.added(allMovies8);
 
-        String[] expected = {allMovies5, allMovies4, allMovies3, allMovies2, allMovies1};
+        String[] expected = {allMovies8,allMovies7,allMovies6,allMovies5, allMovies4};
         String[] actual = manager.lastMovies();
 
         Assertions.assertArrayEquals(expected, actual);
